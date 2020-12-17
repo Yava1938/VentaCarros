@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Venta_de_carros.Models.Carro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Anio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disponibilidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrlFoto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Matricula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Anio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Disponibilidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrlFoto)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdCarro }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdCarro }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdCarro })
+        </td>
+    </tr>
+}
+
+</table>

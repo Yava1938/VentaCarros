@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarrosWebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Carro">
+    <Key>
+      <PropertyRef Name="IdCarro" />
+    </Key>
+    <Property Name="IdCarro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Modelo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Matricula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Anio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Disponibilidad" Type="Boolean" Nullable="false" />
+    <Property Name="UrlFoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Rentas" Relationship="Self.FK_Renta_IdCarro" FromRole="Carros" ToRole="Renta" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="IdCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido_paterno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido_materno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefono" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrlFoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Rentas" Relationship="Self.FK_Renta_IdCliente" FromRole="Clientes" ToRole="Renta" />
+  </EntityType>
+  <EntityType Name="Renta">
+    <Key>
+      <PropertyRef Name="IdRenta" />
+    </Key>
+    <Property Name="IdRenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCarro" Type="Int32" />
+    <Property Name="IdCliente" Type="Int32" />
+    <Property Name="Duracion" Type="Int32" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Carro" Relationship="Self.FK_Renta_IdCarro" FromRole="Renta" ToRole="Carros" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FK_Renta_IdCliente" FromRole="Renta" ToRole="Clientes" />
+  </EntityType>
+  <Association Name="FK_Renta_IdCarro">
+    <End Role="Carros" Type="Self.Carro" Multiplicity="0..1" />
+    <End Role="Renta" Type="Self.Renta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carros">
+        <PropertyRef Name="IdCarro" />
+      </Principal>
+      <Dependent Role="Renta">
+        <PropertyRef Name="IdCarro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Renta_IdCliente">
+    <End Role="Clientes" Type="Self.Cliente" Multiplicity="0..1" />
+    <End Role="Renta" Type="Self.Renta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="Renta">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CarrosWebEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Carros" EntityType="Self.Carro" />
+    <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+    <EntitySet Name="Rentas" EntityType="Self.Renta" />
+    <AssociationSet Name="FK_Renta_IdCarro" Association="Self.FK_Renta_IdCarro">
+      <End Role="Carros" EntitySet="Carros" />
+      <End Role="Renta" EntitySet="Rentas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Renta_IdCliente" Association="Self.FK_Renta_IdCliente">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Renta" EntitySet="Rentas" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(CarrosWebModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(CarrosWebModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>
