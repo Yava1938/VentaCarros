@@ -10,7 +10,7 @@ Nombre         varchar(100) not null,
 Modelo         varchar(100) not null,
 Marca          varchar(50) not null,
 Matricula      varchar(50) not null,
-Anio           datetime not null,
+Anio           int not null,
 Precio         decimal(10,2) not null,
 Disponibilidad bit not null,
 UrlFoto        varchar(max) not null
@@ -28,7 +28,7 @@ Direccion         varchar(100) not null,
 UrlFoto           varchar(max) not null
 )
 
-Create table Renta
+Create table Rentas
 (
 IdRenta        int primary key identity not null,
 IdCarro        int,
