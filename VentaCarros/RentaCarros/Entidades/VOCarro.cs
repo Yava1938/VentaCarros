@@ -19,7 +19,7 @@ namespace Entidades
         private bool disponibilidad;
         private string urlFoto;
 
-        public VOCarro(int idCarro, string nombre, string modelo, string marca, string matricula, int anio, double precio, bool disponibilidad, string urlFoto)
+        public VOCarro(int idCarro, string nombre, string modelo, string marca, string matricula, int anio, double precio, string urlFoto, bool disponibilidad )
         {
             this.IdCarro = idCarro;
             this.Nombre = nombre;
@@ -31,7 +31,7 @@ namespace Entidades
             this.Disponibilidad = disponibilidad;
             this.UrlFoto = urlFoto;
         }
-        public VOCarro(string nombre, string modelo, string marca, string matricula, int anio, double precio, bool disponibilidad, string urlFoto)
+        public VOCarro(string nombre, string modelo, string marca, string matricula, int anio, double precio, string urlFoto, bool disponibilidad)
         {
             this.Nombre = nombre;
             this.Modelo = modelo;

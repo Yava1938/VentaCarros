@@ -1,0 +1,6 @@
+Referencias con logica de negocios en Agencia
+No permite acceder a BLLCarro ni a sus metodos
+---------------------------------------------------------------------------------------------------------
+Se necesita acceder a Logica de negocios para operar en 
+Lista Carros despues de registrar un carro
+---------------------------------------------------------------------------------------------------------

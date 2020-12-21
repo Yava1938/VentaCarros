@@ -17,19 +17,19 @@ namespace LogicaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Error al insertar el registro");
+                throw new ArgumentException("Error al insertar el registro" + ex.Message);
             }
 
         }//End Insertar
-        public static void Eliminar(string idBarco)
+        public static void Eliminar(string idCarro)
         {
             try
             {
-                DALCarro.Eliminar(int.Parse(idBarco));
+                DALCarro.Eliminar(int.Parse(idCarro));
             }
-            catch
+            catch (Exception ex)
             {
-                throw new ArgumentException("Error al eliminar el registro");
+                throw new ArgumentException("Error al eliminar el registro" + ex.Message);
             }
         }
 

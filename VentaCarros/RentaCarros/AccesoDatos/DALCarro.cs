@@ -63,7 +63,6 @@ namespace AccesoDatos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@IdCarro", SqlDbType.Int).Value = idCarro;
                 r = cmd.ExecuteNonQuery();
-
             }
             catch (Exception ex )
             {
@@ -106,7 +105,7 @@ namespace AccesoDatos
             }
             catch(Exception ex)
             {
-                throw new ArgumentException("No se pudo completar la busqueda");
+                throw new ArgumentException("No se pudo completar la busqueda" + ex.Message);
             }
             finally
             {
@@ -132,9 +131,9 @@ namespace AccesoDatos
                     lista.Add(new VOCarro(registro));
 	            }
             }
-            catch
+            catch (Exception ex)
             {
-                throw new ArgumentException("Errorr al consultar carros");
+                throw new ArgumentException("Errorr al consultar carros" + ex.Message);
             }
             return lista;
         }
