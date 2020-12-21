@@ -5,3 +5,7 @@ C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\AccesoDatos\bin\D
 C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\AccesoDatos\bin\Debug\Entidades.pdb
 C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\AccesoDatos\obj\Debug\AccesoDatos.dll
 C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\AccesoDatos\obj\Debug\AccesoDatos.pdb
+C:\Users\Zumer\Documents\Visual Studio 2017\RentaCarros\AccesoDatos\obj\Debug\AccesoDatos.csprojAssemblyReference.cache
+C:\Users\Zumer\Documents\Visual Studio 2017\RentaCarros\AccesoDatos\obj\Debug\AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\Zumer\Documents\Visual Studio 2017\RentaCarros\AccesoDatos\obj\Debug\AccesoDatos.dll
+C:\Users\Zumer\Documents\Visual Studio 2017\RentaCarros\AccesoDatos\obj\Debug\AccesoDatos.pdb

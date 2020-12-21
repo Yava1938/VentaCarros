@@ -11,6 +11,8 @@ namespace AccesoDatos
 {
     public class DALCarro
     {
+        private static VOCarro carro;
+
         public static bool Insertar(VOCarro carro)
         {
             Conexion conexion = new Conexion();
@@ -80,6 +82,61 @@ namespace AccesoDatos
             {
                 return false;
             }
+        }
+        public static VOCarro ConsultarCarro(int idCarro)
+        {
+
+            VOCarro barco = null;
+            Conexion conexion = new Conexion();
+            SqlConnection cnn = new SqlConnection(conexion.CadenaConexion);
+            SqlDataReader datos;
+            try
+            {
+                cnn.Open();
+                SqlCommand cmd = new SqlCommand("SP_ConsultarCarroPorId", cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@IdBarco", SqlDbType.Int).Value = idCarro;
+                datos = cmd.ExecuteReader();
+                while(datos.Read())
+                {
+                    carro = new VOCarro(datos.GetValue(0).ToString(),datos.GetValue(1).ToString(),datos.GetValue(3).ToString(),
+                        datos.GetValue(4).ToString(),Convert.ToInt32(datos.GetValue(5).ToString()),Convert.ToDouble(datos.GetValue(6).ToString()),
+                        Convert.ToBoolean(datos.GetValue(7).ToString()),datos.GetValue(8).ToString());
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new ArgumentException("No se pudo completar la busqueda");
+            }
+            finally
+            {
+                cnn.Close();
+            }
+            return carro;
+        }
+        public static List<VOCarro> ConsultarCarros(bool? disponibilidad)
+        {
+            List<VOCarro> lista = new List<VOCarro>();
+            DataSet ds = new DataSet();
+            Conexion conexion = new Conexion();
+            SqlConnection cnn = new SqlConnection(conexion.CadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_ConsultarCarros", cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Disponibilidad", SqlDbType.Bit).Value = disponibilidad;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds, "Carros");
+                foreach (DataRow registro in ds.Tables[0].Rows)
+	            {
+                    lista.Add(new VOCarro(registro));
+	            }
+            }
+            catch
+            {
+                throw new ArgumentException("Errorr al consultar carros");
+            }
+            return lista;
         }
     }
 }
