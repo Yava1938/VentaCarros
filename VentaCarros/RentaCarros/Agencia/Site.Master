@@ -68,10 +68,10 @@
                         <li class="dropdown"> <a href="#" class="dropdowm-toggle" data-toggle="dropdown" 
                             role="button" aria-haspopup="true" aria-expanded="false">Rentas<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="~/Catalogo/Carros/AltaCarros" runat="server">Alta Rentas</a></li>
+                                <li><a href="~/Rentas/AltaRentas" runat="server">Alta Rentas</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="~/Rentas/AltaClientes" runat="server">En renta</a></li>
-                                <li><a href="~/Rentas/ListaCarros" runat="server">Finalizadas</a></li>
+                                <li><a href="~/Rentas/EnRenta" runat="server">En renta</a></li>
+                                <li><a href="~/Rentas/Finalizadas" runat="server">Finalizadas</a></li>
                             </ul>
                         </li>
                     </ul>
