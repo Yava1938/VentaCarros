@@ -89,13 +89,14 @@
 
             </div>
 
-            <div class="row form-inline">
+            <div class="row form-inline ">
                 <div class="col-md-12">
                     <label>Selecciona foto:</label>
                     <input type="file" class="btn btn-default btn-file" runat="server" id="SubeImagen" style="display:inline-block;" />
                     <asp:Button ID="btnSubeImagen" runat="server" Text="Subir imagen" CssClass="btn btn-primary btn-xs" OnClick="btnSubeImagen_Click" />
                 </div>
             </div>
+            <br />
             <div class="row form-group">
                 <div class="col-md-3" style="text-align:center;">
                     <label for="<%=SubeImagen.ClientID %>">Foto</label>

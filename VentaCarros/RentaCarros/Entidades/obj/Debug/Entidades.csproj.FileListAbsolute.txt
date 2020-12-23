@@ -3,3 +3,5 @@ C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\Entidades\bin\Deb
 C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
 C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\Entidades\obj\Debug\Entidades.dll
 C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\Entidades\bin\Debug\Entidades.dll.CodeAnalysisLog.xml
+C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\Entidades\bin\Debug\Entidades.dll.lastcodeanalysissucceeded

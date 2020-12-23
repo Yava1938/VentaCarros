@@ -171,6 +171,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Catalogo\Carros\AltaCarros.aspx" />
+    <Content Include="Catalogo\Carros\EditarCarro.aspx" />
     <Content Include="Catalogo\Carros\ListaCarros.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -352,6 +353,13 @@
     </Compile>
     <Compile Include="Catalogo\Carros\AltaCarros.aspx.designer.cs">
       <DependentUpon>AltaCarros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo\Carros\EditarCarro.aspx.cs">
+      <DependentUpon>EditarCarro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogo\Carros\EditarCarro.aspx.designer.cs">
+      <DependentUpon>EditarCarro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Catalogo\Carros\ListaCarros.aspx.cs">
       <DependentUpon>ListaCarros.aspx</DependentUpon>

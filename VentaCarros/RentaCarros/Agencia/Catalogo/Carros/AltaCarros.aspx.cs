@@ -18,6 +18,29 @@ namespace Agencia.Catalogo.Carros
 
         }
 
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                VOCarro carro = new VOCarro(txtNombreCarro.Text,
+                                            txtModeloCarro.Text,
+                                            txtMarcaCarro.Text,
+                                            txtMatriculaCarro.Text,
+                                            Convert.ToInt32(txtAnioCarro.Text),
+                                            Convert.ToDouble(txtPrecioCarro.Text),
+                                            imgFotoCarro.ImageUrl, true);
+                BLLCarro.Insertar(carro);
+                LimpiarFormulario();
+                Response.Redirect("ListaCarros.aspx");
+            }
+            catch (Exception ex)
+            {
+
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "Mensaje de error", "alert('Se registro un error a realizar la operacion." + ex.Message + "');", true);
+            }
+
+        }
+
         protected void btnSubeImagen_Click(object sender, EventArgs e)
         {
             if (SubeImagen.Value != "")
@@ -44,28 +67,7 @@ namespace Agencia.Catalogo.Carros
 
         }
 
-        protected void btnGuardar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                VOCarro carro = new VOCarro(txtNombreCarro.Text, 
-                                            txtModeloCarro.Text,
-                                            txtMarcaCarro.Text, 
-                                            txtMatriculaCarro.Text,
-                                            Convert.ToInt32(txtAnioCarro.Text), 
-                                            Convert.ToDouble(txtPrecioCarro.Text), 
-                                            imgFotoCarro.ImageUrl, true);
-                    BLLCarro.Insertar(carro);
-                    LimpiarFormulario();
-                    Response.Redirect("ListaCarros.aspx");
-            }
-            catch (Exception ex)
-            {
-
-                ScriptManager.RegisterClientScriptBlock(this, GetType(), "Mensaje de error", "alert('Se registro un error a realizar la operacion." + ex.Message+"');", true);
-            }
-
-        }
+       
 
         public void LimpiarFormulario()
         {
