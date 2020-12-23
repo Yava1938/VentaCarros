@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using AccesoDatos;
+
 namespace LogicaNegocio
 {
     public class BLLCarro
@@ -20,7 +21,8 @@ namespace LogicaNegocio
                 throw new ArgumentException("Error al insertar el registro" + ex.Message);
             }
 
-        }//End Insertar
+        }//End Insertar 
+
         public static void Eliminar(string idCarro)
         {
             try
@@ -31,8 +33,20 @@ namespace LogicaNegocio
             {
                 throw new ArgumentException("Error al eliminar el registro" + ex.Message);
             }
-        }
+        }//End Eliminar
 
-    }//End cllass BBLCarro
-
-}//End logica de negocio
+        public static List<VOCarro> ConsultarCarros( bool? disponibilidad)
+        {
+            List<VOCarro> carros = null;
+            try
+            {
+                carros = DALCarro.ConsultarCarros(disponibilidad);
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Error al eliminar el registro" + ex.Message);
+            }
+            return carros;
+        }//End Eliminar
+    }
+}

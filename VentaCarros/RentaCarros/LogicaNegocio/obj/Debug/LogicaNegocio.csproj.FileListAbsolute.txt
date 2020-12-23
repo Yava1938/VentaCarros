@@ -1,0 +1,9 @@
+C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\LogicaNegocio\bin\Debug\AccesoDatos.dll
+C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\LogicaNegocio\bin\Debug\Entidades.dll
+C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\LogicaNegocio\bin\Debug\AccesoDatos.pdb
+C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\LogicaNegocio\bin\Debug\Entidades.pdb
+C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\LogicaNegocio\obj\Debug\LogicaNegocio.csprojResolveAssemblyReference.cache
+C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\LogicaNegocio\obj\Debug\LogicaNegocio.pdb

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using LogicaNegocios;
 using System.Web.UI.WebControls;
+using LogicaNegocio;
 
 namespace Agencia.Catalogo.Carros
 {
@@ -30,7 +30,7 @@ namespace Agencia.Catalogo.Carros
         }
         public void CargarGrid()
         {
-            gvCarros.DataSource = BLLCarros.ConsultarCarros(null);
+            gvCarros.DataSource = BLLCarro.ConsultarCarros(null);
             gvCarros.DataBind();
         }
     }

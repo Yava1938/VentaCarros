@@ -48,7 +48,7 @@ namespace Entidades
             this.Nombre = fila["Nombre"].ToString();
             this.Modelo = fila["Modelo"].ToString();
             this.Marca = fila["Marca"].ToString();
-            this.Matricula = fila["IdCarro"].ToString();
+            this.Matricula = fila["Matricula"].ToString();
             this.Anio = int.Parse(fila["Anio"].ToString());
             this.Precio = double.Parse(fila["Precio"].ToString());
             this.Disponibilidad = bool.Parse(fila["Disponibilidad"].ToString());

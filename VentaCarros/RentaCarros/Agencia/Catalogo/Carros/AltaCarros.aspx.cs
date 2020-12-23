@@ -1,5 +1,4 @@
 ﻿using AccesoDatos;
-using LogicaNegocios;
 using Entidades;
 using System;
 using System.Collections.Generic;
@@ -8,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LogicaNegocio;
 
 namespace Agencia.Catalogo.Carros
 {
@@ -30,7 +30,7 @@ namespace Agencia.Catalogo.Carros
                 }
                 else
                 {
-                    string path = Server.MapPath("~/Imagenes/Carros");
+                    string path = Server.MapPath("~/Imagenes/Carros/");
                     if (!Directory.Exists(path))
                     {
                         Directory.CreateDirectory(path);
@@ -48,9 +48,13 @@ namespace Agencia.Catalogo.Carros
         {
             try
             {
-                VOCarro carro = new VOCarro(txtNombreCarro.Text, txtModeloCarro.Text,
-                    txtMarcaCarro.Text, rfvTxtMatriculaCarro.Text, Convert.ToInt32(txtAnioCarro.Text), 
-                    Convert.ToDouble(txtPrecioCarro.Text), lblUrlFoto.InnerText, true);
+                VOCarro carro = new VOCarro(txtNombreCarro.Text, 
+                                            txtModeloCarro.Text,
+                                            txtMarcaCarro.Text, 
+                                            txtMatriculaCarro.Text,
+                                            Convert.ToInt32(txtAnioCarro.Text), 
+                                            Convert.ToDouble(txtPrecioCarro.Text), 
+                                            imgFotoCarro.ImageUrl, true);
                     BLLCarro.Insertar(carro);
                     LimpiarFormulario();
                     Response.Redirect("ListaCarros.aspx");

@@ -24,11 +24,11 @@
                     <asp:BoundField HeaderText="Matricula" ItemStyle-Width="150px" DataField="Matricula" ReadOnly="true" />
                     <asp:BoundField HeaderText="Año" ItemStyle-Width="50px" DataField="Anio" ReadOnly="true" />
                     <asp:BoundField HeaderText="Precio" ItemStyle-Width="50px" DataField="Precio" ReadOnly="true" />
-                    <asp:TemplateField HeaderText="Disponible" ItemStyle-Width="50px">
+                    <asp:TemplateField HeaderText="Disponible" ItemStyle-Width="50px" >
                         <ItemTemplate>
                             <div style="width:100%">
                                 <div style="width: 25%; margin: 0 auto">
-                                    <asp:CheckBox ID="chkDisponible" runat="server" Enabled="false" Checked="<%#Eval("Disponibilidad") %>" />
+                                    <asp:CheckBox ID="chkDisponible" runat="server" Enabled="false" Checked='<%#Eval("Disponibilidad") %>'/>
                                 </div>
                             </div>
                         </ItemTemplate>

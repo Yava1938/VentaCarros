@@ -85,7 +85,7 @@ namespace AccesoDatos
         public static VOCarro ConsultarCarro(int idCarro)
         {
 
-            VOCarro barco = null;
+            VOCarro carro = null;
             Conexion conexion = new Conexion();
             SqlConnection cnn = new SqlConnection(conexion.CadenaConexion);
             SqlDataReader datos;
@@ -94,13 +94,20 @@ namespace AccesoDatos
                 cnn.Open();
                 SqlCommand cmd = new SqlCommand("SP_ConsultarCarroPorId", cnn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@IdBarco", SqlDbType.Int).Value = idCarro;
+                cmd.Parameters.Add("@IdCarro", SqlDbType.Int).Value = idCarro;
                 datos = cmd.ExecuteReader();
                 while(datos.Read())
                 {
-                    carro = new VOCarro(datos.GetValue(0).ToString(),datos.GetValue(1).ToString(),datos.GetValue(3).ToString(),
-                        datos.GetValue(4).ToString(),Convert.ToInt32(datos.GetValue(5).ToString()),Convert.ToDouble(datos.GetValue(6).ToString()),
-                        Convert.ToBoolean(datos.GetValue(7).ToString()),datos.GetValue(8).ToString());
+                    carro = new VOCarro(
+                                            datos.GetValue(0).ToString(),
+                                        datos.GetValue(1).ToString(),
+                                        datos.GetValue(3).ToString(),
+                                        datos.GetValue(4).ToString(),
+                                        Convert.ToInt32(datos.GetValue(5).ToString()),
+                                        Convert.ToDouble(datos.GetValue(6).ToString()),
+                                        datos.GetValue(7).ToString(),
+                                        Convert.ToBoolean(datos.GetValue(8).ToString())
+                                        );
                 }
             }
             catch(Exception ex)

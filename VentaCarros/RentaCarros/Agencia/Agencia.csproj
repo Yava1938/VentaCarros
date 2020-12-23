@@ -404,6 +404,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="utilerias\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
@@ -413,6 +414,10 @@
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{3F7B95E6-9FCB-4664-8EA5-ACD81285ED54}</Project>
       <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicaNegocio\LogicaNegocio.csproj">
+      <Project>{A767EB5C-FF38-4759-8584-5400FD8BB438}</Project>
+      <Name>LogicaNegocio</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

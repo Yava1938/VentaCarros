@@ -48,10 +48,6 @@
       <Project>{7a980a6e-d9b0-4cea-9750-f24389f5f3d8}</Project>
       <Name>AccesoDatos</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Agencia\Agencia.csproj">
-      <Project>{80311634-0f9f-43ec-9687-f46eab596f9d}</Project>
-      <Name>Agencia</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{3f7b95e6-9fcb-4664-8ea5-acd81285ed54}</Project>
       <Name>Entidades</Name>
