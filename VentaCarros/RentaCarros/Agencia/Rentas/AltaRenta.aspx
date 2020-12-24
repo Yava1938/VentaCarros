@@ -28,8 +28,8 @@
 
             <div class="row form-group" style="width:25%;">
             <label for="<%=FechaRenta.ClientID %>">Fecha y Hora de Renta:</label>
-            <input id="FechaRenta" runat="server" type="date" class="form-control" /><div style="position: absolute; top: 0; left: 0;">
-                <asp:RequiredFieldValidator ID="rfvFechaRenta" ValidationGroup="Guardar" runat="server" CssClass="text-danger" ControlToValidate="FechaRenta" ErrorMessage="Fecha de renta requerida"></asp:RequiredFieldValidator>
+            <input id="FechaRenta" runat="server" type="text" class="form-control" /><div style="position: absolute; top: 0; left: 0;">
+                <asp:RequiredFieldValidator ID="rfvtxtFechaRenta" ValidationGroup="Guardar" runat="server" CssClass="text-danger" ControlToValidate="FechaRenta" ErrorMessage="Fecha de renta requerida"></asp:RequiredFieldValidator>
             </div>
         </div>
 
@@ -38,15 +38,16 @@
         <div class="row form-group">
             <asp:Button ID="btnGuardar" ValidationGroup="Guardar" runat="server" Text="Guardar" CssClass="btn btn-success" OnClick="btnGuardar_Click"/>
         </div>
+    
     </div>
-
-    <script>
+        <script>
         $(document).ready(function () {
             $.datetimepicker.setLocale('es');
-            $("#<%=FechaRenta.ClientID%>").datetimepicker({
+            $("#<%=FechaRenta.ClientID %>").datetimepicker({
                 format: 'm/d/Y H:i',
                 minDate: '0'
             });
         });
     </script>
+    
 </asp:Content>

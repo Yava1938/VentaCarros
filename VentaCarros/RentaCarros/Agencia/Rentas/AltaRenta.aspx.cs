@@ -48,6 +48,24 @@ namespace Agencia.Rentas
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DateTime prueba = DateTime.Now;
+                VORenta renta = new VORenta(int.Parse(ddlCarro.SelectedValue),
+                                            int.Parse(ddlCliente.SelectedValue),
+                                            int.Parse(txtDuracion.Text), 
+                                            Convert.ToDateTime(FechaRenta.Value),
+                                            "EN_RENTA"
+                                            );
+                BLLRenta.InsertarRenta(renta);
+                LimpiarFormulario();
+                Response.Redirect("EnRenta.aspx");
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "Mensaje de error",
+                    "alert('Se registro un error al realizar la operacion." + ex.Message + "');", true);
+            }
 
         }
     }

@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BLLCarro.cs" />
     <Compile Include="BLLCliente.cs" />
+    <Compile Include="BLLRenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

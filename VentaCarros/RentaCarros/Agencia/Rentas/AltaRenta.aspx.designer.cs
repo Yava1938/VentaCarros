@@ -73,16 +73,16 @@ namespace Agencia.Rentas {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl FechaRenta;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText FechaRenta;
         
         /// <summary>
-        /// Control rfvFechaRenta.
+        /// Control rfvtxtFechaRenta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFechaRenta;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvtxtFechaRenta;
         
         /// <summary>
         /// Control btnGuardar.

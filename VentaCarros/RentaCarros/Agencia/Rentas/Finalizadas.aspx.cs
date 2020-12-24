@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogicaNegocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,25 @@ namespace Agencia.Rentas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                CargarGrid();
+            }
+        }
 
+        protected void gvRentas_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Select")
+            {
+                Response.Redirect("AltaRenta.aspx");
+            }
+        }
+
+        public void CargarGrid()
+        {
+            string estado = "FINALIZADA";
+            gvRentas.DataSource = BLLRenta.ConsultarRentas(estado);
+            gvRentas.DataBind();
         }
     }
 }

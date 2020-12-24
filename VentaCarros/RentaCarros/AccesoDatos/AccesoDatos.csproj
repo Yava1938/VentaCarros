@@ -44,6 +44,7 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="DALCarro.cs" />
     <Compile Include="DALCliente.cs" />
+    <Compile Include="DALRenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

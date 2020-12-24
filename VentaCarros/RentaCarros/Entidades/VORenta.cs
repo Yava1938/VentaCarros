@@ -106,7 +106,7 @@ namespace Entidades
 
             set
             {
-                Fecha = value;
+                fecha = value;
             }
         }
 
