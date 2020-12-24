@@ -147,7 +147,7 @@ namespace AccesoDatos
         {
             List<VOCarro> lista = new List<VOCarro>();
             DataSet ds = new DataSet();
-            Conexion conexion = new Conexion();
+                Conexion conexion = new Conexion();
             SqlConnection cnn = new SqlConnection(conexion.CadenaConexion);
             try
             {
@@ -160,6 +160,30 @@ namespace AccesoDatos
 	            {
                     lista.Add(new VOCarro(registro));
 	            }
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Errorr al consultar carros" + ex.Message);
+            }
+            return lista;
+        }
+        public static List<VOCarro> ConsultarCarrosDisponibles(bool? disponibilidad)
+        {
+            List<VOCarro> lista = new List<VOCarro>();
+            DataSet ds = new DataSet();
+            Conexion conexion = new Conexion();
+            SqlConnection cnn = new SqlConnection(conexion.CadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_ConsultarCarros", cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Disponibilidad", SqlDbType.Bit).Value = disponibilidad;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds, "Carros");
+                foreach (DataRow registro in ds.Tables[0].Rows)
+                {
+                    lista.Add(new VOCarro(registro));
+                }
             }
             catch (Exception ex)
             {

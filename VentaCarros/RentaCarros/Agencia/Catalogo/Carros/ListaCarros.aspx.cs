@@ -16,7 +16,6 @@ namespace Agencia.Catalogo.Carros
             {
                 CargarGrid();
             }
-
         }
 
         protected void gvCarros_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -27,7 +26,7 @@ namespace Agencia.Catalogo.Carros
                 string idCarro = gvCarros.DataKeys[index].Values["IdCarro"].ToString();
                 Response.Redirect("EditarCarro.aspx?Id=" + idCarro);
             }
-        }
+        } 
         public void CargarGrid()
         {
             gvCarros.DataSource = BLLCarro.ConsultarCarros(null);

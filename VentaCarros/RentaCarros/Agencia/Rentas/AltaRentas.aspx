@@ -23,12 +23,13 @@
             </div>
 
             <div class="row form-group">
-                <label for="<%=txtNombreCarro.ClientID %>">Duración en días</label>
-                <asp:TextBox ID="txtNombreCarro" runat="server" CssClass="form-control" placeholder="10"></asp:TextBox>
+                <label for="<%=txtDuracionRenta.ClientID %>">Duración en días</label>
+                <asp:TextBox ID="txtDuracionRenta" runat="server" CssClass="form-control" placeholder="10">
+                </asp:TextBox>
                 <div style="position:absolute;top:0;left:0;">
-                    <asp:RequiredFieldValidator ID="rfvTxtNombreCarro" ValidationGroup="Guardar" 
-                        runat="server" CssClass="text-danger" ControlToValidate="txtNombreCarro" 
-                        ErrorMessage="Nombre del vehiculo requerido"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvtxtDuracionRenta" ValidationGroup="Guardar" 
+                        runat="server" CssClass="text-danger" ControlToValidate="txtDuracionRenta" 
+                        ErrorMessage="Duración requerida"></asp:RequiredFieldValidator>
                 </div>
             </div>
 

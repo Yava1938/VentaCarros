@@ -49,22 +49,22 @@ namespace Agencia.Rentas {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvddlCliente;
         
         /// <summary>
-        /// Control txtNombreCarro.
+        /// Control txtDuracionRenta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCarro;
+        protected global::System.Web.UI.WebControls.TextBox txtDuracionRenta;
         
         /// <summary>
-        /// Control rfvTxtNombreCarro.
+        /// Control rfvtxtDuracionRenta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTxtNombreCarro;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvtxtDuracionRenta;
         
         /// <summary>
         /// Control FechaRenta.

@@ -49,6 +49,20 @@ namespace LogicaNegocio
             return carros;
         }//End Eliminar
 
+        public static List<VOCarro> ConsultarCarrosDisponibles(bool? disponibilidad)
+        {
+            List<VOCarro> carros = null;
+            try
+            {
+                carros = DALCarro.ConsultarCarrosDisponibles(disponibilidad);
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Error al eliminar el registro" + ex.Message);
+            }
+            return carros;
+        }//End Eliminar
+
         public static void Actualizar(VOCarro carro)
         {
             try
