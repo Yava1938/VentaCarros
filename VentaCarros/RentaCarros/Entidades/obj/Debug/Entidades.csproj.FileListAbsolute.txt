@@ -5,7 +5,6 @@ C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\Entidades\obj\Deb
 C:\Users\Yava1\Desktop\Renta de carros\VentaCarros\RentaCarros\Entidades\obj\Debug\Entidades.pdb
 C:\Users\Zumer\Documents\RentaCarros\VentaCarros\VentaCarros\RentaCarros\Entidades\bin\Debug\Entidades.dll
 C:\Users\Zumer\Documents\RentaCarros\VentaCarros\VentaCarros\RentaCarros\Entidades\bin\Debug\Entidades.pdb
-C:\Users\Zumer\Documents\RentaCarros\VentaCarros\VentaCarros\RentaCarros\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
 C:\Users\Zumer\Documents\RentaCarros\VentaCarros\VentaCarros\RentaCarros\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\Zumer\Documents\RentaCarros\VentaCarros\VentaCarros\RentaCarros\Entidades\obj\Debug\Entidades.dll
 C:\Users\Zumer\Documents\RentaCarros\VentaCarros\VentaCarros\RentaCarros\Entidades\obj\Debug\Entidades.pdb

@@ -22,8 +22,8 @@ namespace AccesoDatos
                 SqlCommand cmd = new SqlCommand("SP_InsertarCliente", cnn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = cliente.Nombre;
-                cmd.Parameters.Add("@Apellido_paterno", SqlDbType.VarChar).Value = cliente.Apellidopaterno;
-                cmd.Parameters.Add("@Apellido_materno", SqlDbType.VarChar).Value = cliente.Apellidomaterno;
+                cmd.Parameters.Add("@Apellido_paterno", SqlDbType.VarChar).Value = cliente.Apellido_paterno;
+                cmd.Parameters.Add("@Apellido_materno", SqlDbType.VarChar).Value = cliente.Apellido_materno;
                 cmd.Parameters.Add("@Correo", SqlDbType.VarChar).Value = cliente.Correo;
                 cmd.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = cliente.Telefono;
                 cmd.Parameters.Add("@Direccion", SqlDbType.VarChar).Value = cliente.Direccion;
@@ -51,8 +51,8 @@ namespace AccesoDatos
                 SqlCommand cmd = new SqlCommand("SP_ActualizarCliente", cnn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = cliente.Nombre;
-                cmd.Parameters.Add("@Apellido_paterno", SqlDbType.VarChar).Value = cliente.Apellidopaterno;
-                cmd.Parameters.Add("@Apellido_materno", SqlDbType.VarChar).Value = cliente.Apellidomaterno;
+                cmd.Parameters.Add("@Apellido_paterno", SqlDbType.VarChar).Value = cliente.Apellido_paterno;
+                cmd.Parameters.Add("@Apellido_materno", SqlDbType.VarChar).Value = cliente.Apellido_materno;
                 cmd.Parameters.Add("@Correo", SqlDbType.VarChar).Value = cliente.Correo;
                 cmd.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = cliente.Telefono;
                 cmd.Parameters.Add("@Direccion", SqlDbType.VarChar).Value = cliente.Direccion;
@@ -127,8 +127,29 @@ namespace AccesoDatos
             }
             return cliente;
         }//End ConsultarClientePorId
+        public static List<VOCliente> ConsultarClientes()
+        {
+            DataSet ds = new DataSet();
+            Conexion conexion = new Conexion();
+            SqlConnection cnn = new SqlConnection(conexion.CadenaConexion);
+            List<VOCliente> clientes = new List<VOCliente>();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_ConsultarClientes", cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds, "Clientes");
+                foreach (DataRow registro in ds.Tables[0].Rows)
+                {
+                    clientes.Add(new VOCliente(registro));
 
-
-
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Error al consultar el registro de cliente");
+            }
+            return clientes;
+        }//End consultarpersona
     }//End DALCliente
 }

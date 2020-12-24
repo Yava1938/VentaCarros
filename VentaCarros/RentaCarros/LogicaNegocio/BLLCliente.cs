@@ -43,6 +43,34 @@ namespace LogicaNegocio
             {
                 throw new ArgumentException("No se pudo actualizar el dato");
             }
+        }//End actualizar
+
+        public static VOCliente ConsultarClientePorId(string idCliente)
+        {
+            VOCliente cliente = null;
+            try
+            {
+                cliente = DALCliente.ConsultarClientePorId(int.Parse(idCliente));
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Error al consultar el registro de persona" + ex.Message);
+            }
+            return cliente;
+        }
+        public static List<VOCliente> ConsultarClientes()
+        {
+            List<VOCliente> clientes = null;
+            try
+            {
+                clientes = DALCliente.ConsultarClientes();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Error al consultar el registro de persona");
+            }
+            return clientes;
         }
     }
 }

@@ -22,8 +22,8 @@ namespace Entidades
         {
             this.IdCliente = cliente;
             this.Nombre = nombre;
-            this.Apellidopaterno = apellidopaterno;
-            this.Apellidomaterno = apellidomaterno;
+            this.Apellido_paterno = apellidopaterno;
+            this.Apellido_materno = apellidomaterno;
             this.Correo = correo;
             this.Telefono = telefono;
             this.Direccion = direccion;
@@ -32,8 +32,8 @@ namespace Entidades
         public VOCliente(string nombre, string apellidopaterno, string apellidomaterno, string correo, string telefono, string direccion, string urlfoto)
         {
             this.Nombre = nombre;
-            this.Apellidopaterno = apellidopaterno;
-            this.Apellidomaterno = apellidomaterno;
+            this.Apellido_paterno = apellidopaterno;
+            this.Apellido_materno = apellidomaterno;
             this.Correo = correo;
             this.Telefono = telefono;
             this.Direccion = direccion;
@@ -43,8 +43,8 @@ namespace Entidades
         {
             IdCliente               = int.Parse(fila["IdCliente"].ToString());
             Nombre                  = fila["Nombre"].ToString();
-            Apellidopaterno         = fila["Apellido_paterno"].ToString();
-            Apellidomaterno         = fila["Apellido_materno"].ToString();
+            Apellido_paterno         = fila["Apellido_paterno"].ToString();
+            Apellido_materno         = fila["Apellido_materno"].ToString();
             Correo                  = fila["Correo"].ToString();
             Telefono                = fila["Telefono"].ToString();
             Direccion               = fila["Direccion"].ToString();
@@ -74,7 +74,7 @@ namespace Entidades
             }
         }//End Nombre
 
-        public string Apellidopaterno
+        public string Apellido_paterno
         {
             get
             {
@@ -86,7 +86,7 @@ namespace Entidades
             }
         }//End Apellidopaterno
 
-        public string Apellidomaterno
+        public string Apellido_materno
         {
             get
             {
