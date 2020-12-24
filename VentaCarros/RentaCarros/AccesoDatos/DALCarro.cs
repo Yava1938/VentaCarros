@@ -51,6 +51,42 @@ namespace AccesoDatos
                 return false;
             }
         }
+
+        public static bool Actualizar(VOCarro carro)
+        {
+            Conexion conexion = new Conexion();
+            SqlConnection cnn = new SqlConnection(conexion.CadenaConexion);
+            int r = 0;
+            try
+            {
+                cnn.Open();
+                SqlCommand cmd = new SqlCommand("SP_ActualizarCarro", cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@IdCarro", SqlDbType.Int).Value = carro.IdCarro;
+                cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = carro.Nombre;
+                cmd.Parameters.Add("@Modelo", SqlDbType.VarChar).Value = carro.Modelo;
+                cmd.Parameters.Add("@Marca", SqlDbType.VarChar).Value = carro.Marca;
+                cmd.Parameters.Add("@Matricula", SqlDbType.VarChar).Value = carro.Matricula;
+                cmd.Parameters.Add("@Anio", SqlDbType.Int).Value = carro.Anio;
+                cmd.Parameters.Add("@Precio", SqlDbType.Decimal).Value = carro.Precio;
+                cmd.Parameters.Add("@UrlFoto", SqlDbType.VarChar).Value = carro.UrlFoto;
+                cmd.Parameters.Add("@Disponibilidad", SqlDbType.Bit).Value = carro.Disponibilidad;
+                r = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("No se pudo actualizar el dato en la base de datos " + ex.Message);
+            }
+            finally
+            {
+                cnn.Close();
+            }
+            if (r == 1)
+                return true;
+            else
+                return false;
+        }
+
         public static bool Eliminar(int idCarro)
         {
             Conexion conexion = new Conexion();
@@ -99,14 +135,15 @@ namespace AccesoDatos
                 while(datos.Read())
                 {
                     carro = new VOCarro(
-                                            datos.GetValue(0).ToString(),
+                                        Convert.ToInt32(datos.GetValue(0).ToString()),
                                         datos.GetValue(1).ToString(),
+                                        datos.GetValue(2).ToString(),
                                         datos.GetValue(3).ToString(),
                                         datos.GetValue(4).ToString(),
                                         Convert.ToInt32(datos.GetValue(5).ToString()),
                                         Convert.ToDouble(datos.GetValue(6).ToString()),
-                                        datos.GetValue(7).ToString(),
-                                        Convert.ToBoolean(datos.GetValue(8).ToString())
+                                        datos.GetValue(8).ToString(),
+                                        Convert.ToBoolean(datos.GetValue(7).ToString())
                                         );
                 }
             }

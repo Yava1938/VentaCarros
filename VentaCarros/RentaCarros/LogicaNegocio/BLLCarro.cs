@@ -48,5 +48,31 @@ namespace LogicaNegocio
             }
             return carros;
         }//End Eliminar
+
+        public static void Actualizar(VOCarro carro)
+        {
+            try
+            {
+                DALCarro.Actualizar(carro);
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Error al insertar el registro" + ex.Message);
+            }
+        }//End Actualizar
+
+        public static VOCarro ConsultarCarro(string idCarro)
+        {
+            VOCarro carro = null;
+            try
+            {
+                carro = DALCarro.ConsultarCarro(int.Parse(idCarro));
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Error al consultar el registro" + ex.Message);
+            }
+            return carro;
+        }
     }
 }

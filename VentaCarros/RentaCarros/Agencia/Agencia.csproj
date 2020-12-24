@@ -172,6 +172,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Catalogo\Carros\AltaCarros.aspx" />
+    <Content Include="Catalogo\Carros\EditarCarro.aspx" />
     <Content Include="Catalogo\Carros\ListaCarros.aspx" />
     <Content Include="Catalogo\Clientes\AltaCliente.aspx" />
     <Content Include="Catalogo\Clientes\DetalleCliente.aspx" />
@@ -187,6 +188,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Rentas\AltaRenta.aspx" />
+    <Content Include="Rentas\EnRenta.aspx" />
+    <Content Include="Rentas\Finalizadas.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -358,6 +362,13 @@
     <Compile Include="Catalogo\Carros\AltaCarros.aspx.designer.cs">
       <DependentUpon>AltaCarros.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Catalogo\Carros\EditarCarro.aspx.cs">
+      <DependentUpon>EditarCarro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogo\Carros\EditarCarro.aspx.designer.cs">
+      <DependentUpon>EditarCarro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Catalogo\Carros\ListaCarros.aspx.cs">
       <DependentUpon>ListaCarros.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -412,6 +423,27 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rentas\AltaRenta.aspx.cs">
+      <DependentUpon>AltaRenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rentas\AltaRenta.aspx.designer.cs">
+      <DependentUpon>AltaRenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rentas\EnRenta.aspx.cs">
+      <DependentUpon>EnRenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rentas\EnRenta.aspx.designer.cs">
+      <DependentUpon>EnRenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rentas\Finalizadas.aspx.cs">
+      <DependentUpon>Finalizadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rentas\Finalizadas.aspx.designer.cs">
+      <DependentUpon>Finalizadas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

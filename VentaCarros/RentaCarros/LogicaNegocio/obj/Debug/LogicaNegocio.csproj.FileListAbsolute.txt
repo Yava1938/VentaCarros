@@ -18,3 +18,12 @@ C:\Users\Zumer\Documents\RentaCarros\VentaCarros\VentaCarros\RentaCarros\LogicaN
 C:\Users\Zumer\Documents\RentaCarros\VentaCarros\VentaCarros\RentaCarros\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\Zumer\Documents\RentaCarros\VentaCarros\VentaCarros\RentaCarros\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\Zumer\Documents\RentaCarros\VentaCarros\VentaCarros\RentaCarros\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+C:\Users\Yava1\Desktop\Renta Carros\VentaCarros\VentaCarros\RentaCarros\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+C:\Users\Yava1\Desktop\Renta Carros\VentaCarros\VentaCarros\RentaCarros\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+C:\Users\Yava1\Desktop\Renta Carros\VentaCarros\VentaCarros\RentaCarros\LogicaNegocio\bin\Debug\AccesoDatos.dll
+C:\Users\Yava1\Desktop\Renta Carros\VentaCarros\VentaCarros\RentaCarros\LogicaNegocio\bin\Debug\Entidades.dll
+C:\Users\Yava1\Desktop\Renta Carros\VentaCarros\VentaCarros\RentaCarros\LogicaNegocio\bin\Debug\AccesoDatos.pdb
+C:\Users\Yava1\Desktop\Renta Carros\VentaCarros\VentaCarros\RentaCarros\LogicaNegocio\bin\Debug\Entidades.pdb
+C:\Users\Yava1\Desktop\Renta Carros\VentaCarros\VentaCarros\RentaCarros\LogicaNegocio\obj\Debug\LogicaNegocio.csprojResolveAssemblyReference.cache
+C:\Users\Yava1\Desktop\Renta Carros\VentaCarros\VentaCarros\RentaCarros\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\Users\Yava1\Desktop\Renta Carros\VentaCarros\VentaCarros\RentaCarros\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
