@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AltaCarros.aspx.cs" Inherits="Agencia.Catalogo.Carros.AltaCarros" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <br />
     <div class = "container">
         <div class =" row">
             <h3>Alta Vehiculos</h3>
             <hr />
+            <br />
             <div class="row form-group">
                 <label for="<%=txtNombreCarro.ClientID %>">Nombre del Vehiculo</label>
                 <asp:TextBox ID="txtNombreCarro" runat="server" CssClass="form-control" placeholder="Corvette"></asp:TextBox>
