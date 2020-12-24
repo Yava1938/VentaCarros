@@ -50,6 +50,7 @@ namespace AccesoDatos
                 cnn.Open();
                 SqlCommand cmd = new SqlCommand("SP_ActualizarCliente", cnn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@IdCliente", SqlDbType.Int).Value = cliente.IdCliente;
                 cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = cliente.Nombre;
                 cmd.Parameters.Add("@Apellido_paterno", SqlDbType.VarChar).Value = cliente.Apellido_paterno;
                 cmd.Parameters.Add("@Apellido_materno", SqlDbType.VarChar).Value = cliente.Apellido_materno;
@@ -79,7 +80,7 @@ namespace AccesoDatos
                 cnn.Open();
                 SqlCommand cmd = new SqlCommand("SP_EliminarCliente", cnn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@IdPersona", SqlDbType.VarChar).Value = idCliente;
+                cmd.Parameters.Add("@IdCliente", SqlDbType.VarChar).Value = idCliente;
                 r = cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

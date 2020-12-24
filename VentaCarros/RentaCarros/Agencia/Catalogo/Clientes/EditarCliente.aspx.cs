@@ -18,7 +18,7 @@ namespace Agencia.Catalogo.Clientes
             {
                 if (Request.QueryString["id"] == null)
                 {
-                    Response.Redirect("ListaPersona.aspx");
+                    Response.Redirect("ListaCliente.aspx");
                 }
                 else
                 {
@@ -31,7 +31,20 @@ namespace Agencia.Catalogo.Clientes
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            VOCliente cliente = new VOCliente(int.Parse(lblIdCliente.Text), txtNombre.Text, txtApellido_paterno.Text, txtApellido_materno.Text, txtCorreo.Text, txtTelefono.Text, txtDireccion.Text, lblUrlFoto.InnerText);
+            try
+            {
+                VOCliente cliente = new VOCliente(int.Parse(lblIdCliente.Text), txtNombre.Text, txtApellido_paterno.Text, txtApellido_materno.Text, txtCorreo.Text, txtTelefono.Text, txtDireccion.Text, lblUrlFoto.InnerText);
+                BLLCliente.Actualizar(cliente);
+                LimpiarFormulario();
+                Response.Redirect("ListaCliente.aspx");
+            }
+            catch (Exception ex)
+            {
+
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "Mensaje de error", "alert('Se registro un error a realizar la operacion." + ex.Message + "');", true);
+
+            }
+
         }//End btnGuardar
 
         public void CagarFormulario(VOCliente cliente)
@@ -71,8 +84,20 @@ namespace Agencia.Catalogo.Clientes
                 }
             }
         }//End btnSubirImagen
-
-        public void LimpiarFormulario(VOCliente cliente)
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BLLCliente.Eliminar(lblIdCliente.Text);
+                LimpiarFormulario();
+                Response.Redirect("ListaCliente.aspx");
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "Mensaje de error", "alert('Se registro un error a realizar la operacion." + ex.Message + "');", true);
+            }
+        }
+        public void LimpiarFormulario()
         {
             txtNombre.Text = "";
             txtApellido_paterno.Text = "";
@@ -82,6 +107,7 @@ namespace Agencia.Catalogo.Clientes
             txtDireccion.Text = "";
             lblUrlFoto.InnerText = "";
         }
+
 
     }
 }

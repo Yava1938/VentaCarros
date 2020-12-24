@@ -24,7 +24,7 @@ namespace Agencia.Catalogo.Clientes
             {
                 int index = int.Parse(e.CommandArgument.ToString());
                 string idCliente = gvClientes.DataKeys[index].Values["IdCliente"].ToString();
-                Response.Redirect("DetalleCliente.aspx?Id=" + idCliente);
+                Response.Redirect("EditarCliente.aspx?Id=" + idCliente);
             }//End if commandname
         }//End rowcommand
 

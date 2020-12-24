@@ -76,6 +76,8 @@
 
         <div class="row form-group">
             <asp:Button ID="btnGuardar" ValidationGroup="Guardar" runat="server" Text="Guardar" CssClass="btn btn-success" Visible="false" OnClick="btnGuardar_Click" />
+            <asp:Button ID="btnEliminar" validationGroup="Guardar" runat="server" Text="Eliminar" CssClass="btn btn-danger" OnClick="btnEliminar_Click" />
+
         </div>
     </div>
 
