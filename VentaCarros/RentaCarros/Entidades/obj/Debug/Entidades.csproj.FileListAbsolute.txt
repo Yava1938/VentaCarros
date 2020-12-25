@@ -10,6 +10,5 @@ C:\Users\Zumer\Documents\RentaCarros\VentaCarros\VentaCarros\RentaCarros\Entidad
 C:\Users\Zumer\Documents\RentaCarros\VentaCarros\VentaCarros\RentaCarros\Entidades\obj\Debug\Entidades.pdb
 C:\Users\Yava1\Desktop\Renta Carros\VentaCarros\VentaCarros\RentaCarros\Entidades\bin\Debug\Entidades.dll
 C:\Users\Yava1\Desktop\Renta Carros\VentaCarros\VentaCarros\RentaCarros\Entidades\bin\Debug\Entidades.pdb
-C:\Users\Yava1\Desktop\Renta Carros\VentaCarros\VentaCarros\RentaCarros\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
 C:\Users\Yava1\Desktop\Renta Carros\VentaCarros\VentaCarros\RentaCarros\Entidades\obj\Debug\Entidades.dll
 C:\Users\Yava1\Desktop\Renta Carros\VentaCarros\VentaCarros\RentaCarros\Entidades\obj\Debug\Entidades.pdb

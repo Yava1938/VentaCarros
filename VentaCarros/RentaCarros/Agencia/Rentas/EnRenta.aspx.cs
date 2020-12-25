@@ -24,8 +24,10 @@ namespace Agencia.Rentas
             {
                 int index = int.Parse(e.CommandArgument.ToString());
                 string idRenta = gvRentas.DataKeys[index].Values["IdRenta"].ToString();
-                string estado = "FINALIZADA";
-                BLLRenta.FinalizarRentas(estado, Convert.ToInt32(idRenta));
+                string idCarro = gvRentas.DataKeys[index].Values["IdCarro"].ToString();
+                string estado = "FINALIZADA"; 
+                BLLRenta.FinalizarRentas(estado, Convert.ToInt32(idRenta)); 
+                BLLCarro.ActualizarDisponibilidad(true, Convert.ToInt32(idCarro)); 
                 Response.Redirect("Finalizadas.aspx" );
             }
         }

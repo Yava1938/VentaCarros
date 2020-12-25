@@ -86,6 +86,34 @@ namespace AccesoDatos
             else
                 return false;
         }
+        
+        public static bool ActualizarDisponibilidad(bool disponibilidad, int IdCarro)
+        {
+            Conexion conexion = new Conexion();
+            SqlConnection cnn = new SqlConnection(conexion.CadenaConexion);
+            int r = 0;
+            try
+            {
+                cnn.Open();
+                SqlCommand cmd = new SqlCommand("SP_ActualizarCarroDisponibilidad", cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@IdCarro", SqlDbType.Int).Value = IdCarro;
+                cmd.Parameters.Add("@Disponibilidad", SqlDbType.Bit).Value = disponibilidad;
+                r = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("No se pudo actualizar el dato en la base de datos " + ex.Message);
+            }
+            finally
+            {
+                cnn.Close();
+            }
+            if (r == 1)
+                return true;
+            else
+                return false;
+        }
 
         public static bool Eliminar(int idCarro)
         {

@@ -58,6 +58,7 @@ namespace Agencia.Rentas
                                             "EN_RENTA"
                                             );
                 BLLRenta.InsertarRenta(renta);
+                BLLCarro.ActualizarDisponibilidad(false, int.Parse(ddlCarro.SelectedValue));
                 LimpiarFormulario();
                 Response.Redirect("EnRenta.aspx");
             }

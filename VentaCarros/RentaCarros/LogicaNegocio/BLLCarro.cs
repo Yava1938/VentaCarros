@@ -60,6 +60,17 @@ namespace LogicaNegocio
                 throw new ArgumentException("Error al insertar el registro" + ex.Message);
             }
         }//End Actualizar
+        public static void ActualizarDisponibilidad(bool disponibilidad, int idCarro)
+        {
+            try
+            {
+                DALCarro.ActualizarDisponibilidad(disponibilidad, idCarro);
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Error al insertar el registro" + ex.Message);
+            }
+        }//End Actualizar
 
         public static VOCarro ConsultarCarro(string idCarro)
         {

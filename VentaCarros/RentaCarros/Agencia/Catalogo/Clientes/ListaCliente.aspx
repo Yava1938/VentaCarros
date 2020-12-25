@@ -16,7 +16,7 @@
                 DataKeyNames="IdCliente" 
                 OnRowCommand="gvClientes_RowCommand">
                 <Columns>
-                    <asp:ImageField HeaderText="Foto" ReadOnly="true" DataImageUrlField="UrlFoto" ControlStyle-Width="110px" ControlStyle-CssClass="fotogv"></asp:ImageField>
+                    <asp:ImageField HeaderText="Foto" ReadOnly="true" DataImageUrlField="UrlFoto" ControlStyle-Width="110px" ControlStyle-Height="120px" ControlStyle-CssClass="fotogv"></asp:ImageField>
                     <asp:BoundField HeaderText="Id" ItemStyle-Width="50px" DataField="IdCliente" ReadOnly="true" />
                     <asp:BoundField HeaderText="Nombre" ItemStyle-Width="150px" DataField="Nombre" />
                     <asp:BoundField HeaderText="Apellido paterno" ItemStyle-Width="150px" DataField="Apellido_paterno" />
