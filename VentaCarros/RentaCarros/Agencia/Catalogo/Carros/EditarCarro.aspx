@@ -22,7 +22,7 @@
         </div>
 
         <div class="row form-group">
-            <label for="<%=txtModeloCarro.ClientID %>">Nombre:</label>
+            <label for="<%=txtModeloCarro.ClientID %>">Modelo:</label>
             <asp:TextBox ID="txtModeloCarro" runat="server" CssClass="form-control" placeholder="HashBack"></asp:TextBox>
             <div class="col-md-12" style="margin-bottom: 20px;">
                 <div style="position: absolute; top: 0; left: 0">
@@ -34,7 +34,7 @@
         </div>
 
         <div class="row form-group">
-            <label for="<%=txtMarcaCarro.ClientID %>">Nombre:</label>
+            <label for="<%=txtMarcaCarro.ClientID %>">Marca:</label>
             <asp:TextBox ID="txtMarcaCarro" runat="server" CssClass="form-control" placeholder="Chevrolet"></asp:TextBox>
             <div class="col-md-12" style="margin-bottom: 20px;">
                 <div style="position: absolute; top: 0; left: 0">

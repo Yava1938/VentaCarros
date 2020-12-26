@@ -14,7 +14,8 @@
                     <asp:BoundField HeaderText="Duracion" ItemStyle-Width="150px" DataField="Duracion" ReadOnly="true" />
                     <asp:BoundField HeaderText="Fecha" ItemStyle-Width="160px" DataField="Fecha" ReadOnly="true" />
                     <asp:BoundField HeaderText="Estado" ItemStyle-Width="50px" DataField="Estado" ReadOnly="true" />
-                    <asp:ButtonField ButtonType="Button" ControlStyle-CssClass="btn btn-success btn-xs" Text="Finalizar" CommandName="Select" />
+                    <asp:ButtonField ButtonType="Button" ControlStyle-CssClass="btn btn-success btn-xs" Text="Finalizar" 
+                        CommandName="Select" />
                 </Columns>
             </asp:GridView>
         </div>
