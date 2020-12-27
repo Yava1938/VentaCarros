@@ -22,7 +22,7 @@ namespace Agencia.Rentas
         {
             if (e.CommandName == "Select")
             {
-                Response.Redirect("AltaRenta.aspx");
+                Response.Redirect("ListaCarros.aspx");
             }
         }
 

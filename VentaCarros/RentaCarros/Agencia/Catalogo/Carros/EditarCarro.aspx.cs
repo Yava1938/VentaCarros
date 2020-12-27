@@ -64,6 +64,22 @@ namespace Agencia.Catalogo.Carros
 
         }
 
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BLLCarro.Eliminar(lblCarro.Text);
+                LimpiarFormulario();
+                Response.Redirect("ListaCarros.aspx");
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "Mensaje de error",
+                    "alert('Se registro un error al realizar la operacion." + ex.Message + "');", true);
+            }
+
+        }
+
         protected void btnSubeImagen_Click(object sender, EventArgs e)
         {
             if (SubeImagen.Value != "")
@@ -89,24 +105,7 @@ namespace Agencia.Catalogo.Carros
             }
 
         }
-
-
-
-        protected void btnEliminar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                BLLCarro.Eliminar(lblCarro.Text);
-                LimpiarFormulario();
-                Response.Redirect("ListaCarros.aspx");
-            }
-            catch (Exception ex)
-            {
-                ScriptManager.RegisterClientScriptBlock(this, GetType(), "Mensaje de error",
-                    "alert('Se registro un error al realizar la operacion." + ex.Message + "');", true);
-            }
-
-        }
+        
 
         public void LimpiarFormulario()
         {

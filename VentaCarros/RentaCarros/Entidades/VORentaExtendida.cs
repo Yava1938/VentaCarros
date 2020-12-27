@@ -10,15 +10,17 @@ namespace Entidades
     public class VORentaExtendida
     {
         private int idRenta;
+        private int idCarro;
         private string nombreCarro;
         private string nombreCliente;
         private int duracion;
         private DateTime fecha;
         private string estado;
 
-        public VORentaExtendida(int idRenta, string nombreCarro, string nombreCliente, int duracion, DateTime fecha, string estado)
+        public VORentaExtendida(int idRenta, int idCarro, string nombreCarro, string nombreCliente, int duracion, DateTime fecha, string estado)
         {
             this.idRenta = idRenta;
+            this.idCarro = idCarro;
             this.nombreCarro = nombreCarro;
             this.nombreCliente = nombreCliente;
             this.duracion = duracion;
@@ -26,9 +28,9 @@ namespace Entidades
             this.estado = estado;
         }
 
-        public VORentaExtendida(string nombreCarro, string nombreCliente, int duracion, DateTime fecha, string estado)
+        public VORentaExtendida(int idCarro, string nombreCarro, string nombreCliente, int duracion, DateTime fecha, string estado)
         {
-            
+            this.idCarro = idCarro;
             this.nombreCarro = nombreCarro;
             this.nombreCliente = nombreCliente;
             this.duracion = duracion;
@@ -39,8 +41,9 @@ namespace Entidades
         public VORentaExtendida(DataRow dr)
         {
             IdRenta = int.Parse(dr["IdRenta"].ToString());
+            IdCarro = int.Parse(dr["IdCarro"].ToString());
             NombreCarro = dr["Nombre"].ToString(); 
-            NombreCliente = dr["Nombre"].ToString();
+            NombreCliente = dr["NombreCliente"].ToString();
             Duracion = int.Parse(dr["Duracion"].ToString());
             Fecha = DateTime.Parse(dr["Fecha"].ToString());
             Estado = dr["Estado"].ToString();
@@ -56,6 +59,18 @@ namespace Entidades
             set
             {
                 idRenta = value;
+            }
+        }
+        public int IdCarro
+        {
+            get
+            {
+                return idCarro;
+            }
+
+            set
+            {
+                idCarro = value;
             }
         }
 

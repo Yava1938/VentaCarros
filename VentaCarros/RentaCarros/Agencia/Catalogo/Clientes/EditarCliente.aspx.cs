@@ -50,7 +50,7 @@ namespace Agencia.Catalogo.Clientes
         public void CagarFormulario(VOCliente cliente)
         {
             lblIdCliente.Text = cliente.IdCliente.ToString();
-            txtNombre.Text = cliente.Nombre.ToString();
+            txtNombre.Text = cliente.NombreCliente.ToString();
             txtApellido_paterno.Text = cliente.Apellido_paterno.ToString();
             txtApellido_materno.Text = cliente.Apellido_materno.ToString();
             txtCorreo.Text = cliente.Correo.ToString();

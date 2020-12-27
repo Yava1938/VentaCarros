@@ -175,7 +175,6 @@
     <Content Include="Catalogo\Carros\EditarCarro.aspx" />
     <Content Include="Catalogo\Carros\ListaCarros.aspx" />
     <Content Include="Catalogo\Clientes\AltaCliente.aspx" />
-    <Content Include="Catalogo\Clientes\DetalleCliente.aspx" />
     <Content Include="Catalogo\Clientes\EditarCliente.aspx" />
     <Content Include="Catalogo\Clientes\ListaCliente.aspx" />
     <Content Include="Contact.aspx" />
@@ -382,13 +381,6 @@
     </Compile>
     <Compile Include="Catalogo\Clientes\AltaCliente.aspx.designer.cs">
       <DependentUpon>AltaCliente.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Catalogo\Clientes\DetalleCliente.aspx.cs">
-      <DependentUpon>DetalleCliente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Catalogo\Clientes\DetalleCliente.aspx.designer.cs">
-      <DependentUpon>DetalleCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Catalogo\Clientes\EditarCliente.aspx.cs">
       <DependentUpon>EditarCliente.aspx</DependentUpon>

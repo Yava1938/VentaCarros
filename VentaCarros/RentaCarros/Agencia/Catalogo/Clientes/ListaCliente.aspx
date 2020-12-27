@@ -18,7 +18,7 @@
                 <Columns>
                     <asp:ImageField HeaderText="Foto" ReadOnly="true" DataImageUrlField="UrlFoto" ControlStyle-Width="110px" ControlStyle-Height="120px" ControlStyle-CssClass="fotogv"></asp:ImageField>
                     <asp:BoundField HeaderText="Id" ItemStyle-Width="50px" DataField="IdCliente" ReadOnly="true" />
-                    <asp:BoundField HeaderText="Nombre" ItemStyle-Width="150px" DataField="Nombre" />
+                    <asp:BoundField HeaderText="Nombre" ItemStyle-Width="150px" DataField="NombreCliente" />
                     <asp:BoundField HeaderText="Apellido paterno" ItemStyle-Width="150px" DataField="Apellido_paterno" />
                     <asp:BoundField HeaderText="Apellido materno" ItemStyle-Width="150px" DataField="Apellido_materno" />
                     <asp:BoundField HeaderText="Correo" ItemStyle-Width="150px" DataField="Correo" />

@@ -10,7 +10,7 @@ namespace Entidades
     public class VOCliente
     {
         private int idCliente;
-        private string nombre;
+        private string nombreCliente;
         private string apellidopaterno;
         private string apellidomaterno;
         private string correo;
@@ -18,10 +18,10 @@ namespace Entidades
         private string direccion;
         private string urlfoto;
 
-        public VOCliente(int cliente, string nombre, string apellidopaterno, string apellidomaterno, string correo, string telefono, string direccion, string urlfoto)
+        public VOCliente(int cliente, string nombreCliente, string apellidopaterno, string apellidomaterno, string correo, string telefono, string direccion, string urlfoto)
         {
             this.IdCliente = cliente;
-            this.Nombre = nombre;
+            this.NombreCliente = nombreCliente;
             this.Apellido_paterno = apellidopaterno;
             this.Apellido_materno = apellidomaterno;
             this.Correo = correo;
@@ -29,9 +29,9 @@ namespace Entidades
             this.Direccion = direccion;
             this.Urlfoto = urlfoto;
         }
-        public VOCliente(string nombre, string apellidopaterno, string apellidomaterno, string correo, string telefono, string direccion, string urlfoto)
+        public VOCliente(string nombreCliente, string apellidopaterno, string apellidomaterno, string correo, string telefono, string direccion, string urlfoto)
         {
-            this.Nombre = nombre;
+            this.NombreCliente = nombreCliente;
             this.Apellido_paterno = apellidopaterno;
             this.Apellido_materno = apellidomaterno;
             this.Correo = correo;
@@ -42,7 +42,7 @@ namespace Entidades
         public VOCliente(DataRow fila)
         {
             IdCliente               = int.Parse(fila["IdCliente"].ToString());
-            Nombre                  = fila["Nombre"].ToString();
+            NombreCliente                  = fila["NombreCliente"].ToString();
             Apellido_paterno         = fila["Apellido_paterno"].ToString();
             Apellido_materno         = fila["Apellido_materno"].ToString();
             Correo                  = fila["Correo"].ToString();
@@ -62,15 +62,15 @@ namespace Entidades
             }
         }//End Cliente
 
-        public string Nombre
+        public string NombreCliente
         {
             get
             {
-                return nombre;
+                return nombreCliente;
             }
             set
             {
-                nombre = value;
+                nombreCliente = value;
             }
         }//End Nombre
 

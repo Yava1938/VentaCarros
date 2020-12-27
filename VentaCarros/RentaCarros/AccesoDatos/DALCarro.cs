@@ -87,7 +87,7 @@ namespace AccesoDatos
                 return false;
         }
         
-        public static bool ActualizarDisponibilidad(bool disponibilidad, int IdCarro)
+        public static bool ActualizarDisponibilidad(bool disponibilidad, int Carro)
         {
             Conexion conexion = new Conexion();
             SqlConnection cnn = new SqlConnection(conexion.CadenaConexion);
@@ -97,7 +97,7 @@ namespace AccesoDatos
                 cnn.Open();
                 SqlCommand cmd = new SqlCommand("SP_ActualizarCarroDisponibilidad", cnn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@IdCarro", SqlDbType.Int).Value = IdCarro;
+                cmd.Parameters.Add("@IdCarro", SqlDbType.VarChar).Value = Carro;
                 cmd.Parameters.Add("@Disponibilidad", SqlDbType.Bit).Value = disponibilidad;
                 r = cmd.ExecuteNonQuery();
             }

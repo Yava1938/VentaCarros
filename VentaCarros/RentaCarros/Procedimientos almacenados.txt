@@ -1,0 +1,180 @@
+CREATE PROCEDURE [dbo].[SP_ActualizarCarro]
+	@IdCarro int,
+	@Nombre varchar(100) = null,
+	@Modelo varchar(20)  = null,
+	@Marca varchar(20)  = null,
+	@Matricula varchar(20)  = null,
+	@Anio int  = null,
+	@Precio decimal (10,2)  = null,
+	@UrlFoto varchar(max)  = null,
+	@Disponibilidad bit = null
+
+AS
+	UPDATE Carros
+	SET
+	Nombre = ISNULL(@Nombre, Nombre),
+	Modelo = ISNULL (@Modelo, Modelo),
+	Marca = ISNULL (@Marca, Marca),
+	Matricula = ISNULL(@Matricula, Matricula),
+	Anio = ISNULL (@Anio, Anio),
+	Precio = ISNULL (@Precio, Precio),
+	UrlFoto = ISNULL (@UrlFoto, UrlFoto),
+	Disponibilidad = ISNULL (@Disponibilidad, Disponibilidad)
+	Where IdCarro = @IdCarro
+RETURN 0
+-------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[SP_ActualizarCarroDisponibilidad]
+	@IdCarro int,
+	@Disponibilidad bit
+
+AS
+	UPDATE Carros
+	SET
+	Disponibilidad = ISNULL (@Disponibilidad, Disponibilidad)
+	Where IdCarro = @IdCarro
+RETURN 0
+-------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[SP_ActualizarCliente]
+@IdCliente int,
+@Nombre varchar(100)=null,
+@Apellido_paterno varchar(100)=null,
+@Apellido_materno varchar(100)=null,
+@Correo varchar(100)=null,
+@Telefono varchar(100)=null,
+@Direccion varchar(100)=null,
+@UrlFoto varchar(max)=null
+
+AS
+BEGIN
+	UPDATE Clientes
+	SET
+	Nombre=ISNULL(@Nombre,Nombre),
+	Apellido_paterno=ISNULL(@Apellido_paterno,Apellido_paterno),
+	Apellido_materno=ISNULL(@Apellido_materno,Apellido_materno),
+	Correo=ISNULL(@Correo,Correo),
+	Telefono=ISNULL(@Telefono,Telefono),
+	Direccion=ISNULL(@Direccion,Direccion),
+	UrlFoto=ISNULL(@UrlFoto,UrlFoto)
+	WHERE IdCliente=@IdCliente
+END
+-------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[SP_ConsultarCarroPorId]
+	@IdCarro int
+AS
+	SELECT * from Carros where IdCarro = @IdCarro
+RETURN 0
+------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[SP_ConsultarCarros]
+	@Disponibilidad bit = null
+AS
+	if(@Disponibilidad is null)
+		begin
+			SELECT * from Carros
+		end
+		else
+		begin
+			Select * from Carros where Disponibilidad = @Disponibilidad
+		end
+RETURN 0
+-------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[SP_ConsultarClientePorId]
+@IdCliente int
+
+AS
+
+BEGIN
+	SELECT * FROM Clientes
+	WHERE IdCliente=@IdCliente
+END
+--------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[SP_ConsultarClientes]
+	AS
+	SELECT * FROM Clientes
+--------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[SP_ConsultaRentasProceso]
+	
+	@Estado varchar(25)
+
+AS
+
+BEGIN
+	SELECT r.IdRenta, c.Nombre, cl.Nombre, r.Duracion, r.Fecha, r.Estado
+	FROM ((Rentas r
+	INNER JOIN Carros c ON r.IdCarro = c.IdCarro)
+	INNER JOIN Clientes cl  ON r.IdCliente = cl.IdCliente)
+	where Estado = @Estado;
+END
+--------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[SP_EliminarCarro]
+	@IdCarro int
+
+AS
+	DELETE Carros Where IdCarro = @IdCarro
+RETURN 0
+---------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[SP_EliminarCliente]
+@IdCliente int
+
+AS
+
+BEGIN
+	DELETE Clientes
+	WHERE IdCliente=@IdCliente
+END
+---------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[SP_FinalizarRenta]
+	@IdRenta int,
+	@Estado varchar(20)
+	
+	AS
+
+	UPDATE Rentas
+	SET
+	Estado = ISNULL (@Estado, Estado)
+	Where IdRenta = @IdRenta
+
+RETURN 0
+---------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[SP_InsertarCarro]
+	@Nombre varchar(100),
+	@Modelo varchar(20),
+	@Marca varchar(20),
+	@Matricula varchar(20),
+	@Anio int,
+	@Precio decimal (10,2),
+	@UrlFoto varchar(max)
+
+AS
+	INSERT INTO Carros (Nombre, Modelo, Marca, Matricula, Anio, Precio, Disponibilidad, UrlFoto) 
+	values (@Nombre, @Modelo, @Marca, @Matricula, @Anio, @Precio, 1, @UrlFoto)
+RETURN 0
+---------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[SP_InsertarCliente]
+
+@Nombre varchar(100)=null,
+@Apellido_paterno varchar(100)=null,
+@Apellido_materno varchar(100)=null,
+@Correo varchar(100)=null,
+@Telefono varchar(100)=null,
+@Direccion varchar(100)=null,
+@UrlFoto varchar(max)=null
+
+AS
+BEGIN
+INSERT INTO Clientes(Nombre,Apellido_paterno,Apellido_materno,Correo,Telefono,Direccion,UrlFoto)
+VALUES (@Nombre,@Apellido_paterno,@Apellido_materno,@Correo,@Telefono,@Direccion,@UrlFoto)
+END
+---------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[SP_InsertarRenta]
+@IdCarro int,
+@IdCliente int,
+@Duracion int,
+@Fecha DateTime,
+@Estado varchar(20)
+
+AS 
+BEGIN
+	INSERT INTO Rentas(IdCarro,IdCliente,Duracion,Fecha,Estado)
+	VALUES (@IdCarro,@IdCliente,@Duracion,@Fecha,@Estado)
+END
+----------------------------------------------------------------------------------------------------

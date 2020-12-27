@@ -21,7 +21,7 @@ namespace AccesoDatos
                 cnn.Open();
                 SqlCommand cmd = new SqlCommand("SP_InsertarCliente", cnn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = cliente.Nombre;
+                cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = cliente.NombreCliente;
                 cmd.Parameters.Add("@Apellido_paterno", SqlDbType.VarChar).Value = cliente.Apellido_paterno;
                 cmd.Parameters.Add("@Apellido_materno", SqlDbType.VarChar).Value = cliente.Apellido_materno;
                 cmd.Parameters.Add("@Correo", SqlDbType.VarChar).Value = cliente.Correo;
@@ -51,7 +51,7 @@ namespace AccesoDatos
                 SqlCommand cmd = new SqlCommand("SP_ActualizarCliente", cnn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@IdCliente", SqlDbType.Int).Value = cliente.IdCliente;
-                cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = cliente.Nombre;
+                cmd.Parameters.Add("@NombreCliente", SqlDbType.VarChar).Value = cliente.NombreCliente;
                 cmd.Parameters.Add("@Apellido_paterno", SqlDbType.VarChar).Value = cliente.Apellido_paterno;
                 cmd.Parameters.Add("@Apellido_materno", SqlDbType.VarChar).Value = cliente.Apellido_materno;
                 cmd.Parameters.Add("@Correo", SqlDbType.VarChar).Value = cliente.Correo;

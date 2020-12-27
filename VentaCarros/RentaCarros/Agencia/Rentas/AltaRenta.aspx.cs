@@ -26,7 +26,7 @@ namespace Agencia.Rentas
             List<VOCliente> clientes = BLLCliente.ConsultarClientes();
             foreach (VOCliente cliente in clientes)
             {
-                ddlCliente.Items.Add(new ListItem(cliente.Nombre, cliente.IdCliente.ToString()));
+                ddlCliente.Items.Add(new ListItem(cliente.NombreCliente, cliente.IdCliente.ToString()));
             }
         }
         public void CatalogoCarros()
