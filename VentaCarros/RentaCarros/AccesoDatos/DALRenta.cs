@@ -38,9 +38,9 @@ namespace AccesoDatos
             }//End ty/catch
         }//End insertar
 
-        public static List<VORenta> ConsultarRentas(string estado)
+        public static List<VORentaExtendida> ConsultarRentas(string estado)
         {
-            List<VORenta> lista = new List<VORenta>();
+            List<VORentaExtendida> lista = new List<VORentaExtendida>();
             DataSet ds = new DataSet();
             Conexion conexion = new Conexion();
             SqlConnection cnn = new SqlConnection(conexion.CadenaConexion);
@@ -53,7 +53,7 @@ namespace AccesoDatos
                 da.Fill(ds, "Rentas");
                 foreach (DataRow registro in ds.Tables[0].Rows)
                 {
-                    lista.Add(new VORenta(registro));
+                    lista.Add(new VORentaExtendida(registro));
                 }
             }
             catch (Exception ex)

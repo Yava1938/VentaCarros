@@ -23,9 +23,9 @@ namespace LogicaNegocio
 
         }//End Insertar 
 
-        public static List<VORenta> ConsultarRentas(string estado)
+        public static List<VORentaExtendida> ConsultarRentas(string estado)
         {
-            List<VORenta> lista = null;
+            List<VORentaExtendida> lista = null;
             try
             {
                 lista = DALRenta.ConsultarRentas(estado);

@@ -9,8 +9,8 @@
                 DataKeyNames="IdRenta"  OnRowCommand="gvRentas_RowCommand">
                 <Columns>
                     <asp:BoundField HeaderText="Id" ItemStyle-Width="50px" DataField="IdRenta" ReadOnly="true" />
-                    <asp:BoundField HeaderText="Carro" ItemStyle-Width="150px" DataField="IdCarro" ReadOnly="true" />
-                    <asp:BoundField HeaderText="Cliente" ItemStyle-Width="150px" DataField="IdCliente" ReadOnly="true" />
+                    <asp:BoundField HeaderText="Carro" ItemStyle-Width="150px" DataField="NombreCarro" ReadOnly="true" />
+                    <asp:BoundField HeaderText="Cliente" ItemStyle-Width="150px" DataField="NombreCliente" ReadOnly="true" />
                     <asp:BoundField HeaderText="Duracion" ItemStyle-Width="150px" DataField="Duracion" ReadOnly="true" />
                     <asp:BoundField HeaderText="Fecha" ItemStyle-Width="160px" DataField="Fecha" ReadOnly="true" />
                     <asp:BoundField HeaderText="Estado" ItemStyle-Width="50px" DataField="Estado" ReadOnly="true" />
